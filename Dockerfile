@@ -1,6 +1,7 @@
 FROM ubuntu:18.04
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
     wget \
     qt5-default \
     qt5-qmake \
@@ -22,6 +23,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     debhelper \
     isolinux \
     python3-dev \
+    syslinux \
+    initramfs-tools \
+    policykit-1 \
+    hicolor-icon-theme \
     qttools5-dev-tools && \
     # Clean
     rm -rf /var/lib/apt/lists/*
